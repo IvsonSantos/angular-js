@@ -33,7 +33,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="aluno in alunos">
+                    <tr ng-repeat="aluno in alunos | filter:busca">
                         <td>{{aluno.nome}}</td>
                         <td>{{aluno.email}}</td>
                         <td>{{aluno.nota1}}</td>
