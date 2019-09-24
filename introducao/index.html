@@ -27,7 +27,7 @@
                         <td>{{aluno.nota1}}</td>
                         <td>{{aluno.nota2}}</td>
                         <td>{{aluno.nota3}}</td>
-                        <td>0</td>
+                        <td>{{media(aluno)}}</td>
                     </tr>
                 </tbody>    
             </table>
@@ -40,9 +40,15 @@
                         $scope.titulo = "Sistema com Angular JS";
                         $scope.alunos = [
                             {nome:"Camila",email:"camila@b.c",nota1:80,nota2:80, nota3:55},
-                            {nome:"Jose",email:"camila@b.c",nota1:90,nota2:80, nota3:55},
+                            {nome:"Jose",email:"camila@b.c",nota1:80,nota2:80, nota3:80},
                             {nome:"Murilo",email:"camila@b.c",nota1:10,nota2:80, nota3:55}
-                        ] 
+                        ];
+
+                        // funcao criada
+                        $scope.media = function(Aluno) {
+                            var media = (Aluno.nota1 + Aluno.nota2 + Aluno.nota3) / 3;
+                            return media.toFixed(2); // para tirar os zeros, javascript
+                        };
                 })
         </script>
     </body>
