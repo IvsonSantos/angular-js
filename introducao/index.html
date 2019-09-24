@@ -40,7 +40,7 @@
                         <td>{{aluno.nota1}}</td>
                         <td>{{aluno.nota2}}</td>
                         <td>{{aluno.nota3}}</td>
-                        <td>{{media(aluno)}}</td>
+                        <td>{{aluno.media}}</td>
                     </tr>
                 </tbody>    
             </table>
@@ -59,11 +59,28 @@
                             {nome:"Ana",email:"ana@b.com",nota1:10,nota2:80, nota3:55}
                         ];
 
-                        // funcao criada
-                        $scope.media = function(Aluno) {
+                        var init = function() {
+                            $scope.alunos.forEach(function(aluno) {
+                                aluno.media = media(aluno);
+                            });
+                        };
+
+                        var contar2 = 0;
+                        var media = function(Aluno) {
+                            console.log(contar2++);
                             var media = (Aluno.nota1 + Aluno.nota2 + Aluno.nota3) / 3;
                             return media.toFixed(2); // para tirar os zeros, javascript
                         };
+
+                        var contar = 0;
+                        // funcao criada
+                        $scope.media = function(Aluno) {
+                            console.log(contar++);
+                            var media = (Aluno.nota1 + Aluno.nota2 + Aluno.nota3) / 3;
+                            return media.toFixed(2); // para tirar os zeros, javascript
+                        };
+
+                        init();
                 })
         </script>
     </body>
