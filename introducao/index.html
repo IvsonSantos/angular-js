@@ -2,6 +2,7 @@
 <html ng-app="meuModulo">
     <head>
         <title>Angular JS</title>
+        <script src="lib/angular/angular.min.js"></script>
     </head>
 
     <body ng-controller="indexController">
@@ -10,7 +11,7 @@
             <h2>{{titulo}}</h2>
         </header>
 
-        <script src="lib/angular/angular.min.js"></script>
+        
         <script type="text/javascript">
             angular.module("meuModulo", [])
                 .controller("indexController", function($scope) {
