@@ -11,13 +11,14 @@
 
     <body ng-controller="indexController">
 
-        <header>
+        <header class="container">
             <h2>{{titulo}}</h2>
         </header>
 
         <main class="container">
             <div class="row">
-
+                <!-- cria uma variavel BUSCA que pode ser utilizada no scope -->
+                <input type="text" placeholder="Busca" ng-model="busca"> 
             </div>
 
             <table class="striped centered">
