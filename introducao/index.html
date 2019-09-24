@@ -9,6 +9,28 @@
 
         <header>
             <h2>{{titulo}}</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Nota1</th>
+                        <th>Nota2</th>
+                        <th>Nota3</th>
+                        <th>Media</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="aluno in alunos">
+                        <td>{{aluno.nome}}</td>
+                        <td>{{aluno.email}}</td>
+                        <td>{{aluno.nota1}}</td>
+                        <td>{{aluno.nota2}}</td>
+                        <td>{{aluno.nota3}}</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>    
+            </table>
         </header>
 
         
@@ -16,6 +38,11 @@
             angular.module("meuModulo", [])
                 .controller("indexController", function($scope) {
                         $scope.titulo = "Sistema com Angular JS";
+                        $scope.alunos = [
+                            {nome:"Camila",email:"camila@b.c",nota1:80,nota2:80, nota3:55},
+                            {nome:"Jose",email:"camila@b.c",nota1:90,nota2:80, nota3:55},
+                            {nome:"Murilo",email:"camila@b.c",nota1:10,nota2:80, nota3:55}
+                        ] 
                 })
         </script>
     </body>
