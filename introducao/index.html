@@ -12,8 +12,10 @@
     <body ng-controller="indexController">
 
         <header>
-
             <h2>{{titulo}}</h2>
+        </header>
+
+        <main>
 
             <table class="striped centered">
                 <thead>
@@ -37,7 +39,7 @@
                     </tr>
                 </tbody>    
             </table>
-        </header>
+        </main>
 
         
         <script type="text/javascript">
@@ -45,9 +47,11 @@
                 .controller("indexController", function($scope) {
                         $scope.titulo = "Sistema com Angular JS";
                         $scope.alunos = [
-                            {nome:"Camila",email:"camila@b.c",nota1:80,nota2:80, nota3:55},
-                            {nome:"Jose",email:"camila@b.c",nota1:80,nota2:80, nota3:80},
-                            {nome:"Murilo",email:"camila@b.c",nota1:10,nota2:80, nota3:55}
+                            {nome:"Camila",email:"camila@b.com",nota1:80,nota2:80, nota3:55},
+                            {nome:"Jose",email:"jose@b.com",nota1:80,nota2:80, nota3:80},
+                            {nome:"Murilo",email:"murilo@b.com",nota1:10,nota2:80, nota3:55},
+                            {nome:"Pedro",email:"pedro@b.com",nota1:10,nota2:80, nota3:55},
+                            {nome:"Ana",email:"ana@b.com",nota1:10,nota2:80, nota3:55}
                         ];
 
                         // funcao criada
