@@ -34,6 +34,7 @@
                             <th>Nota2</th>
                             <th>Nota3</th>
                             <th>Media</th>
+                            <th>Ação</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,6 +45,7 @@
                             <td>{{aluno.nota2}}</td>
                             <td>{{aluno.nota3}}</td>
                             <td>{{aluno.media}}</td>
+                            <th><button ng-click="editarAluno(aluno)" class="btn blue">Editar</button></th>
                         </tr>
                     </tbody>    
                 </table>
@@ -118,6 +120,7 @@
                             $scope.alunos.forEach(function(aluno) {
                                 aluno.media = media(aluno);
                             });
+                            limpaForm();
                         };
 
                         var contar2 = 0;
@@ -131,9 +134,16 @@
                             Aluno.media = media(Aluno);
                             $scope.alunos.push(Aluno);
                             $('#modal1').closeModal();
+                            limpaForm();
+                        };
+
+                        $scope.editarAluno = function(Aluno) {
+                            $('#modal1').openModal();
+                        }
+                        
+                        var limpaForm = function() {
                             $scope.Aluno = {nome: "",email:"",nota1:'',nota2:'',nota3:'',media:''};
                         };
-                        
 
                         init();
                 })
