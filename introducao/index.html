@@ -71,25 +71,20 @@
           <p>Preencha os dados do Aluno</p>
           <div class="row">
               <div class="input-field col m6 s12">
-              <input type="text" ng-model="Aluno.nome" class="validate">
-              <label>Nome</label>
+              <input type="text" ng-model="Aluno.nome" class="validate" placeholder="Nome"> 
             </div>
             
             <div class="input-field col m6 s12">
-              <input type="text" ng-model="Aluno.email" class="validate">
-              <label>E-mail</label>
+              <input type="text" ng-model="Aluno.email" class="validate" placeholder="Email">
             </div>
             <div class="input-field col m4 s12">
-              <input type="text" ng-model="Aluno.nota1" class="validate">
-              <label>Nota1</label>
+              <input type="text" ng-model="Aluno.nota1" class="validate" placeholder="nota1">
             </div>
             <div class="input-field col m4 s12">
-              <input type="text" ng-model="Aluno.nota2" class="validate">
-              <label>Nota2</label>
+              <input type="text" ng-model="Aluno.nota2" class="validate" placeholder="nota2"> 
             </div>
             <div class="input-field col m4 s12">
-              <input type="text" ng-model="Aluno.nota3" class="validate">
-              <label>Nota3</label>
+              <input type="text" ng-model="Aluno.nota3" class="validate" placeholder="nota3">
             </div>
           </div>
         </div>
@@ -140,12 +135,24 @@
                         };
 
                         $scope.editando = false;
+                        var alunoEditar;
 
                         $scope.editarAluno = function(Aluno) {
                             $scope.editando = true;
                             angular.copy(Aluno, $scope.Aluno);
                             $('#modal1').openModal();
+                            alunoEditar = Aluno;
                         }
+                        
+                        $scope.salvarAluno = function(Aluno) {
+                            alunoEditar.nome = Aluno.nome;
+                            alunoEditar.email = Aluno.email;
+                            alunoEditar.nota1 = Aluno.nota1;
+                            alunoEditar.nota2 = Aluno.nota2;
+                            alunoEditar.nota3 = Aluno.nota3;
+                            alunoEditar.media = media(Aluno);
+                            $('#modal1').closeModal();
+                        };
                         
                         var limpaForm = function() {
                             $scope.Aluno = {nome: "",email:"",nota1:'',nota2:'',nota3:'',media:''};
